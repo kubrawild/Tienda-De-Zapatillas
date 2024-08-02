@@ -1,0 +1,149 @@
+.containerNavbar {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(45, 57, 66);
+  align-items: center;
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+li {
+  list-style: none;
+}
+
+.categories {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 75px;
+}
+.categories li {
+  background-color: beige;
+  padding: 10px 20px;
+  color: #7f669d;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  align-items: center;
+  text-align: center;
+}
+.categories li:hover {
+  background-color: rgb(206, 206, 198);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  min-height: 100vh;
+  background: url("https://res.cloudinary.com/dm2v8xdbc/image/upload/v1722039259/AA2C1F9CD9F438CAEEA3882398054BCBA441DE24_nf3eyn.gif")
+    no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.containerNavbar {
+  position: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  background: rgba(255, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  z-index: 100;
+}
+.containerNavbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: 0.5s;
+}
+.header:hover::before {
+  left: 100%;
+}
+.logo {
+  color: #fff;
+  font-size: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: default;
+}
+.categories a {
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+  margin-left: 35px;
+  transition: 0.3s;
+}
+.categories a:hover {
+  color: #f00;
+}
+#menu-icon {
+  font-size: 36px;
+  color: #fff;
+  display: none;
+}
+/* BREAKPOINTS */
+@media (max-width: 992px) {
+  .header {
+    padding: 1.25rem 4%;
+  }
+}
+@media (max-width: 768px) {
+  #menu-icon {
+    display: block;
+  }
+  .categories {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 0.5rem 4%;
+    display: none;
+  }
+  .navbar.active {
+    display: block;
+  }
+  .categories a {
+    display: block;
+    margin: 1.5rem 0;
+  }
+  .nav-bg {
+    position: absolute;
+    top: 79px;
+    left: 0;
+    width: 100%;
+    height: 295px;
+    background: rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    z-index: 99;
+    display: none;
+  }
+  .nav-bg.active {
+    display: block;
+  }
+}
